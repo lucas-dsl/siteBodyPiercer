@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- FONTES IMPORTADAS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap" rel="stylesheet">
+
+    <!-- ICONES IMPORTADOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-KNqzKMHJe7u9cmvGdD8Vz9vPDU4dFv8kZPKMIGbKc7MZK+K++x5Z6zZFV9NEQSCJ64A9G5pjAcZs3m+zYjQe7A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Aline Martinelli - Body Piercer</title>
+</head>
+
+<body>
+
+    <!-- PARTE INTRODUTÓRIA DO SITE -->
+    <header>
+        <section class="sectionHero" aria-label="Seção principal com imagem e cta">
+            <div class="heroConteudo">
+                <img src="imgs/fotos/logo.png" alt="Logo do estúdio Aline Martinelli Body Piercer">
+                <h1>Arte e Profissionalismo em Body Piercing</h1>
+
+                <nav class="botoes" aria-label="Links principais de contato">
+                    <a href="https://wa.me/5549991582789" target="_blank" class="btn-whats" rel="noopener noreferrer"
+                        aria-label="Abrir conversa no WhatsApp">
+                        <img src="imgs/icones/icone-whats.png" alt="Ícone do WhatsApp">
+                        <span>WhatsApp</span>
+                    </a>
+                    <a href="https://www.instagram.com/am_bodypiercersjc" target="_blank" class="btn-insta"
+                        rel="noopener noreferrer" aria-label="Abrir perfil no Instagram">
+                        <img src="imgs/icones/icone-insta.png" alt="Ícone do Instagram">
+                        <span>Instagram</span>
+                    </a>
+                </nav>
+
+                <div class="mouse" aria-hidden="true">
+                    <div class="bolinha"></div>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <main>
+        <!-- SEÇÃO SOBRE A PROFISSIONAL -->
+        <section class="marginX" id="sobre" aria-labelledby="titulo-sobre">
+            <div class="sobre-conteudo">
+                <figure class="sobre-esquerda">
+                    <img src="imgs/fotos/fotoAline.jpg" alt="Foto da profissional Aline Martinelli" class="foto">
+                </figure>
+
+                <article class="sobre-direita">
+                    <span class="subtitulo">SOBRE A PROFISSIONAL</span>
+                    <h2 id="titulo-sobre" class="nomeProfissional">Aline Martinelli</h2>
+
+                    <div class="linha-separacao" aria-hidden="true"></div>
+
+                    <p class="biografia">Sou Aline Martinelli, mãe do Anthoni e apaixonada por joias e piercings. Há
+                        vários anos atuo no universo da perfuração auricular, unindo estética, significado e expressão
+                        pessoal.</p>
+                    <p class="biografia">Com o tempo, percebi que cada perfuração carrega uma história única e revela
+                        muito sobre quem somos. Cada cliente traz um motivo especial, e participar desse momento é o que
+                        torna meu trabalho tão gratificante.</p>
+                    <p class="biografia">Há 2 anos, decidi me especializar em piercings e perfurações corporais para
+                        elevar ainda mais a qualidade do meu trabalho. Busco oferecer experiências que unem segurança,
+                        estética e significado, sempre com responsabilidade e dedicação.</p>
+
+                    <ul class="estatisticas" aria-label="Estatísticas profissionais">
+                        <li>
+                            <strong class="numero">500+</strong>
+                            <span class="descricao">Piercings</span>
+                        </li>
+                        <li>
+                            <strong class="numero">2+</strong>
+                            <span class="descricao">Anos</span>
+                        </li>
+                        <li>
+                            <strong class="numero">100%</strong>
+                            <span class="descricao">Segurança</span>
+                        </li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <!-- SEÇÃO CATÁLOGO -->
+        <section class="marginX" id="catalogo" aria-labelledby="titulo-catalogo">
+            <header class="headerSection">
+                <span class="subtitulo">JOIAS DISPONÍVEIS</span>
+                <h2 id="titulo-catalogo" class="titulo">Coleção Exclusiva</h2>
+                <p class="descricaoHeader">Trabalho apenas com joias de altíssima qualidade, com garantia concedida pela
+                    distribuidora, oferecendo beleza e segurança.</p>
+            </header>
+
+            <div class="containerCatalogo">
+                <article class="caixaCatalogo">
+                    <img src="imgs/fotos/capa.png" alt="Joias em titânio prateado" class="imgCatalogo">
+                    <div class="descricaoCatalogo">
+                        <h3>Joias em <span class="destaqueTitanio">Titânio</span></h3>
+                        <p>Peças em titânio na coloração prata com alta durabilidade.</p>
+                        <button type="button" aria-label="Ver catálogo completo de joias em titânio"
+                            id="abrirCatalogo">Ver catálogo
+                            completo</button>
+                    </div>
+                </article>
+
+                <!-- MODAL CATÁLOGO -->
+                <div id="popupCatalogo" class="modal">
+                    <div class="modal-conteudo">
+                        <span class="fechar" id="fecharPopup">&times;</span>
+                        <h2>Catálogo de Joias</h2>
+                        <p class="modal-subtitulo">Joias disponíveis no estúdio - Materiais certificados conforme laudo
+                            da distribuidora
+                        </p>
+
+                        <div class="itens-catalogo">
+                            <div class="item">
+                                <img src="imgs/catalogoJoias/joia1.jpg" alt="Primeira jóia do catálogo">
+                                <div class="item-info">
+                                    <h3>Brincos</h3>
+                                    <p>Titânio</p>
+                                    <strong>R$ Consultar Valor</strong>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="imgs/catalogoJoias/joia3.jpg" alt="Primeira jóia do catálogo">
+                                <div class="item-info">
+                                    <h3>Piercing Umbigo</h3>
+                                    <p>Titânio</p>
+                                    <strong>R$ Consultar Valor</strong>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="imgs/catalogoJoias/joia4.jpg" alt="Primeira jóia do catálogo">
+                                <div class="item-info">
+                                    <h3>Brincos</h3>
+                                    <p>Titânio</p>
+                                    <strong>R$ Consultar Valor</strong>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="imgs/catalogoJoias/joia6.jpg" alt="Primeira jóia do catálogo">
+                                <div class="item-info">
+                                    <h3>Brincos</h3>
+                                    <p>Titânio</p>
+                                    <strong>R$ Consultar Valor</strong>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="imgs/catalogoJoias/joia8.jpg" alt="Primeira jóia do catálogo">
+                                <div class="item-info">
+                                    <h3>Piercing Umbigo</h3>
+                                    <p>Titânio</p>
+                                    <strong>R$ Consultar Valor</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <span class="modal-infoFinal">💎 Gostou de uma joia? Consulte disponibilidade pelo
+                            WhatsApp.</span>
+                    </div>
+                </div>
+
+                <article class="caixaCatalogo">
+                    <img src="imgs/fotos/capa2.png" alt="Joias em titânio dourado PVD Gold" class="imgCatalogo">
+                    <div class="descricaoCatalogo">
+                        <h3>Joias em PVD <span class="destaqueGold">Gold</span></h3>
+                        <p>Peças em titânio na coloração dourada com alta durabilidade.</p>
+                        <button type="button" aria-label="Ver catálogo completo de joias douradas">Ver catálogo
+                            completo</button>
+                    </div>
+                </article>
+            </div>
+
+            <aside class="materialJoias" aria-label="Informações sobre materiais das joias">
+                <div class="informacoesMaterial">
+                    <p class="tituloMaterial">💎 Materiais: Titânio, Titânio PVD Gold.</p>
+                    <p class="descricaoMaterial">Todas as peças possuem laudo de garantia e procedência concedida pela
+                        distribuidora.</p>
+                </div>
+            </aside>
+        </section>
+
+        <!-- SEÇÃO PERFURAÇÕES -->
+        <section class="marginX" id="perfuracoes" aria-labelledby="titulo-perfuracoes">
+            <header class="headerSection">
+                <span class="subtitulo">MEU TRABALHO</span>
+                <h2 id="titulo-perfuracoes" class="titulo">Perfurações Realizadas</h2>
+                <p class="descricaoHeader">Cada perfuração é feita com precisão, cuidado e atenção aos detalhes,
+                    respeitando a anatomia e o estilo de cada cliente.</p>
+            </header>
+
+            <div class="containerPerfuracoes">
+                <article class="caixaPerfuracoes">
+                    <h3>Perfurações em Orelha</h3>
+                    <button type="button" aria-label="Ver todas as perfurações em orelha">Ver Todas as
+                        Perfurações</button>
+                </article>
+                <article class="caixaPerfuracoes">
+                    <h3>Perfurações Faciais</h3>
+                    <button type="button" aria-label="Ver todas as perfurações faciais">Ver Todas as
+                        Perfurações</button>
+                </article>
+            </div>
+
+            <div class="infoInsta">
+                <span>Quer ver mais do meu trabalho?</span>
+                <div class="linha-visite">
+                    <a href="https://www.instagram.com/am_bodypiercersjc/" target="_blank"
+                        rel="noopener noreferrer">Visite meu Instagram
+                        <img src="imgs/icones/icone-insta-16.png" alt="Ícone do Instagram">
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO LOCALIZAÇÃO -->
+        <section class="marginX" id="localizacao" aria-labelledby="titulo-localizacao">
+            <header class="headerSection">
+                <span class="subtitulo">ONDE ESTOU</span>
+                <h2 id="titulo-localizacao" class="titulo">Localização e Horários</h2>
+            </header>
+
+            <div class="container">
+                <div class="caixa">
+                    <div class="linhaTitulo">
+                        <img src="imgs/icones/icone-localização.png" alt="Ícone de localização">
+                        <p>Endereço</p>
+                    </div>
+                    <address>
+                        <p class="linhaEndereco">Avenida Santo Antônio, 131 - Centro</p>
+                        <p class="linhaEndereco">São José do Cedro - SC</p>
+                        <p class="linhaEndereco">CEP 89930-000</p>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Rua%20Santo%20Ant%C3%B4nio%2C%20131%20-%20Centro%2C%20S%C3%A3o%20Jos%C3%A9%20do%20Cedro%20-%20SC%2C%2089930-000%2C%20Brasil"
+                            target="_blank" class="linhaVerNoMapa" rel="noopener noreferrer"
+                            aria-label="Abrir localização no Google Maps">Ver no Google Maps</a>
+                    </address>
+                </div>
+
+                <div class="caixa">
+                    <div class="linhaTitulo">
+                        <img src="imgs/icones/icone-tempo.png" alt="Ícone de relógio indicando horário">
+                        <p>Horário</p>
+                    </div>
+                    <div class="linhaHorario">
+                        <p>Segunda a Sexta:</p>
+                        <p>Após às 17h</p>
+                    </div>
+                    <div class="linhaHorario">
+                        <p>Sábado:</p>
+                        <p>Agendar</p>
+                    </div>
+                    <div class="linhaHorario">
+                        <p>Domingo:</p>
+                        <p>Agendar</p>
+                    </div>
+                    <p class="infoAgendamento">📅 Sábado e Domingo Atendimento com Agendamento</p>
+                </div>
+
+                <div class="mapa">
+                    <iframe
+                        src="https://www.google.com/maps?q=Rua+Santo+Ant%C3%B4nio,+131+-+Centro,+S%C3%A3o+Jos%C3%A9+do+Cedro+-+SC,+89930-000,+Brasil&z=17&output=embed"
+                        title="Mapa mostrando a localização do estúdio Aline Martinelli" allowfullscreen loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="containerFooter">
+            <div class="caixaFooter">
+                <h3>Sobre o Estúdio</h3>
+                <p>Especializado em body piercing com anos de experiência, priorizando segurança, qualidade e
+                    satisfação do cliente.</p>
+            </div>
+            <div class="caixaFooter">
+                <h3>Links Rápidos</h3>
+                <nav aria-label="Links internos do site">
+                    <a href="#sobre" class="linkSecao">Sobre</a>
+                    <a href="#catalogo" class="linkSecao">Joias</a>
+                    <a href="#perfuracoes" class="linkSecao">Perfurações</a>
+                    <a href="#localizacao" class="linkSecao">Localização</a>
+                </nav>
+            </div>
+            <div class="caixaFooter">
+                <h3>Contato</h3>
+                <div class="botoesFooter">
+                    <a href="https://wa.me/5549991582789" target="_blank" rel="noopener noreferrer"
+                        aria-label="Contato pelo WhatsApp"><img src="imgs/icones/icone-whats-12.png"
+                            alt="Icone para entrar em contato via whatsapp"></a>
+                    <a href="https://www.instagram.com/am_bodypiercersjc/" target="_blank" rel="noopener noreferrer"
+                        aria-label="Visitar perfil no Instagram"><img src="imgs/icones/icone-insta-30.png"
+                            alt="Icone para entrar em contato via instagram"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="centraliza">
+            <div class="separacaoFooter" aria-hidden="true"></div>
+        </div>
+
+        <div class="copyright">
+            <p>&copy; 2025 Aline Martinelli Body Piercer. Todos os direitos reservados.</p>
+            <p>Gostou do site?
+                <a href="https://wa.me/5511941128505?text=Ol%C3%A1%20Lucas%2C%20tenho%20interesse%20em%20fazer%20um%20site%21"
+                    target="_blank" rel="noopener noreferrer" class="contato-dev"
+                    aria-label="Entre em contato com o desenvolvedor pelo WhatsApp">Entre em contato</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
