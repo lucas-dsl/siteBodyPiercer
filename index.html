@@ -108,14 +108,14 @@
                         <h3>Joias em <span class="destaqueTitanio">Titânio</span></h3>
                         <p>Peças em titânio na coloração prata com alta durabilidade.</p>
                         <button type="button" aria-label="Ver catálogo completo de joias em titânio" id="abrirCatalogo"
-                            data-modal-id="popupCatalogo">Ver catálogo
+                            data-modal-id="modalJoias1">Ver catálogo
                             completo</button>
                     </div>
                 </article>
 
-                <!-- MODAL CATÁLOGO -->
-                <div id="popupCatalogo" class="modal">
-                    <div class="modal-conteudo">
+                <!-- MODAL CATÁLOGO 1 -->
+                <div id="modalJoias1" class="modal">
+                    <div class="conteudo">
                         <span class="fechar" id="fecharPopup">&times;</span>
                         <h2>Catálogo de Joias</h2>
                         <p class="modal-subtitulo">Joias disponíveis no estúdio - Materiais certificados conforme laudo
@@ -126,7 +126,7 @@
                             <div class="item">
                                 <img src="imgs/catalogoJoias/joia1.jpg" alt="Primeira jóia do catálogo">
                                 <div class="item-info">
-                                    <h3>Brincos</h3>
+                                    <h3>Labret</h3>
                                     <p>Titânio</p>
                                     <strong>R$ Consultar Valor</strong>
                                 </div>
@@ -134,7 +134,7 @@
                             <div class="item">
                                 <img src="imgs/catalogoJoias/joia3.jpg" alt="Primeira jóia do catálogo">
                                 <div class="item-info">
-                                    <h3>Piercing Umbigo</h3>
+                                    <h3>Curved Barbell</h3>
                                     <p>Titânio</p>
                                     <strong>R$ Consultar Valor</strong>
                                 </div>
@@ -150,7 +150,7 @@
                             <div class="item">
                                 <img src="imgs/catalogoJoias/joia6.jpg" alt="Primeira jóia do catálogo">
                                 <div class="item-info">
-                                    <h3>Brincos</h3>
+                                    <h3>Labret</h3>
                                     <p>Titânio</p>
                                     <strong>R$ Consultar Valor</strong>
                                 </div>
@@ -158,7 +158,7 @@
                             <div class="item">
                                 <img src="imgs/catalogoJoias/joia8.jpg" alt="Primeira jóia do catálogo">
                                 <div class="item-info">
-                                    <h3>Piercing Umbigo</h3>
+                                    <h3>Curved Barbell</h3>
                                     <p>Titânio</p>
                                     <strong>R$ Consultar Valor</strong>
                                 </div>
@@ -176,14 +176,14 @@
                         <h3>Joias em PVD <span class="destaqueGold">Gold</span></h3>
                         <p>Peças em titânio na coloração dourada com alta durabilidade.</p>
                         <button type="button" aria-label="Ver catálogo completo de joias douradas" id="abrirCatalogo2"
-                            data-modal-id="Second-popupCatalogo">Ver catálogo
+                            data-modal-id="modalJoias2">Ver catálogo
                             completo</button>
                     </div>
                 </article>
 
                 <!-- MODAL CATÁLOGO 2 -->
-                <div id="Second-popupCatalogo" class="modal">
-                    <div class="modal-conteudo">
+                <div id="modalJoias2" class="modal">
+                    <div class="conteudo">
                         <span class="fechar" id="Second-fecharPopup">&times;</span>
                         <h2>Catálogo de Joias</h2>
                         <p class="modal-subtitulo">Joias disponíveis no estúdio - Materiais certificados conforme laudo
@@ -201,7 +201,7 @@
                             <div class="item">
                                 <img src="imgs/catalogoJoias/joia5.jpg" alt="Primeira jóia do catálogo">
                                 <div class="item-info">
-                                    <h3>Brincos</h3>
+                                    <h3>Argolas segmentadas</h3>
                                     <p>Titânio PVD Gold</p>
                                     <strong>R$ Consultar Valor</strong>
                                 </div>
@@ -217,7 +217,7 @@
                             <div class="item">
                                 <img src="imgs/catalogoJoias/joia9.jpg" alt="Primeira jóia do catálogo">
                                 <div class="item-info">
-                                    <h3>Brincos</h3>
+                                    <h3>Cluster</h3>
                                     <p>Titânio PVD Gold</p>
                                     <strong>R$ Consultar Valor</strong>
                                 </div>
@@ -225,7 +225,7 @@
                             <div class="item">
                                 <img src="imgs/catalogoJoias/joia10.jpg" alt="Primeira jóia do catálogo">
                                 <div class="item-info">
-                                    <h3>Brincos</h3>
+                                    <h3>Argolas segmentadas</h3>
                                     <p>Titânio PVD Gold</p>
                                     <strong>R$ Consultar Valor</strong>
                                 </div>
@@ -258,14 +258,112 @@
             <div class="containerPerfuracoes">
                 <article class="caixaPerfuracoes">
                     <h3>Perfurações em Orelha</h3>
-                    <button type="button" aria-label="Ver todas as perfurações em orelha">Ver Todas as
+                    <button type="button" aria-label="Ver todas as perfurações em orelha" id="abrirCatalogo"
+                        data-modal-id="modalPerfOrelha">Ver Todas as
                         Perfurações</button>
                 </article>
+
                 <article class="caixaPerfuracoes">
                     <h3>Perfurações Faciais</h3>
-                    <button type="button" aria-label="Ver todas as perfurações faciais">Ver Todas as
+                    <button type="button" aria-label="Ver todas as perfurações faciais"
+                        data-modal-id="modalPerfFacial">Ver Todas as
                         Perfurações</button>
                 </article>
+
+                <!-- MODAL PERFURAÇÕES 1 -->
+                <div class="modal" id="modalPerfOrelha">
+                    <div class="conteudo">
+                        <span class="fechar" id="Second-fecharPopup">&times;</span>
+                        <h2>Galeria de Perfurações</h2>
+                        <p class="modal-subtitulo">Perfurações realizadas no estúdio com técnicas profissionais</p>
+                        <div class="itens-perfuracoes">
+                            <div class="item-perfuracao">
+                                <img src="imgs/portfolio/perfuracao6.png" alt="">
+                                <div class="desc-perfuracao">
+                                    <p>Orelha</p>
+                                    <h3>Lóbulo, Hélix, Tragus</h3>
+                                    <span>Diversas perfurações e joias cravejadas no lóbulo, hélix e tragus</span>
+                                </div>
+                            </div>
+                            <div class="item-perfuracao">
+                                <img src="imgs/portfolio/perfuracao7.jpg" alt="">
+                                <div class="desc-perfuracao">
+                                    <p>Hélix e Lóbulo</p>
+                                    <h3>Hélix Piercing e Lóbulo Piercing</h3>
+                                    <span>Joias cravejadas seguindo a curva da hélix e lóbulo</span>
+                                </div>
+                            </div>
+                            <div class="item-perfuracao">
+                                <img src="imgs/portfolio/perfuracao8.jpg" alt="">
+                                <div class="desc-perfuracao">
+                                    <p>Rook e Hélix</p>
+                                    <h3>Rook Piercing e Hélix Piercing</h3>
+                                    <span>Perfurações de Rook e Hélix com joias barbell e argola</span>
+                                </div>
+                            </div>
+                            <div class="item-perfuracao">
+                                <img src="imgs/portfolio/perfuracao9.jpg" alt="">
+                                <div class="desc-perfuracao">
+                                    <p>Hélix e Lóbulo</p>
+                                    <h3>Hélix Piercing e Lóbulo Piercing</h3>
+                                    <span>Hélix com joia longa e cravejada que simula várias perfurações.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MODAL PERFURAÇÕES 2 -->
+            <div class="modal" id="modalPerfFacial">
+                <div class="conteudo">
+                    <span class="fechar" id="Second-fecharPopup">&times;</span>
+                    <h2>Galeria de Perfurações</h2>
+                    <p class="modal-subtitulo">Perfurações realizadas no estúdio com técnicas profissionais</p>
+                    <div class="itens-perfuracoes">
+                        <div class="item-perfuracao">
+                            <img src="imgs/portfolio/perfuracao1.jpg" alt="">
+                            <div class="desc-perfuracao">
+                                <p>Nariz</p>
+                                <h3>Nostril Piercing</h3>
+                                <span>Perfuração na lateral da narina.</span>
+                            </div>
+                        </div>
+                        <div class="item-perfuracao">
+                            <img src="imgs/portfolio/perfuracao2.jpg" alt="">
+                            <div class="desc-perfuracao">
+                                <p>Sobrancelha</p>
+                                <h3>Piercing de Sobrancelha</h3>
+                                <span>Duas perfurações verticais na área da sobrancelha</span>
+                            </div>
+                        </div>
+                        <div class="item-perfuracao">
+                            <img src="imgs/portfolio/perfuracao3.jpg" alt="">
+                            <div class="desc-perfuracao">
+                                <p>Lábio</p>
+                                <h3>Argola no Lábio</h3>
+                                <span>Perfuração na lateral do lábio inferior</span>
+                            </div>
+                        </div>
+                        <div class="item-perfuracao">
+                            <img src="imgs/portfolio/perfuracao4.jpg" alt="">
+                            <div class="desc-perfuracao">
+                                <p>Nariz</p>
+                                <h3>Piercing de Septo</h3>
+                                <span>Perfuração no septo com uma joia circular cravejada</span>
+                            </div>
+                        </div>
+                        <div class="item-perfuracao">
+                            <img src="imgs/portfolio/perfuracao5.jpg" alt="">
+                            <div class="desc-perfuracao">
+                                <p>Umbigo</p>
+                                <h3>Navel Piercing</h3>
+                                <span>Perfuração vertical feita geralmente na dobra superior do umbigo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             </div>
 
             <div class="infoInsta">
