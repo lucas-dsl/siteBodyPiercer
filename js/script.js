@@ -1,18 +1,25 @@
-const btnAbrir = document.getElementById('abrirCatalogo');
-const popup = document.getElementById('popupCatalogo');
-const btnFechar = document.getElementById('fecharPopup');
+document.addEventListener("DOMContentLoaded", () => {
+    const botoesAbrir = document.querySelectorAll("[id^='abrirCatalogo']");
+    const botoesFechar = document.querySelectorAll(".fechar");
 
-btnAbrir.addEventListener('click', () => {
-    popup.style.display = 'flex';
+    botoesAbrir.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const modalId = btn.getAttribute("data-modal-id");
+            const modal = document.getElementById(modalId);
+            if (modal) modal.style.display = "flex";
+        });
+    });
+
+    botoesFechar.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const modal = btn.closest(".modal");
+            if (modal) modal.style.display = "none";
+        });
+    });
+
+    window.addEventListener("click", (e) => {
+        if (e.target.classList.contains("modal")) {
+            e.target.style.display = "none";
+        }
+    });
 });
-
-btnFechar.addEventListener('click', () => {
-    popup.style.display = 'none';
-});
-
-// Fecha ao clicar fora do conteúdo
-window.addEventListener('click', (e) => {
-    if (e.target === popup) {
-        popup.style.display = 'none';
-    }
-}); 

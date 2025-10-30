@@ -301,6 +301,7 @@ button:hover {
     background-color: rgba(0, 0, 0, 0.6);
     justify-content: center;
     align-items: center;
+    z-index: 10;
 }
 
 .fechar {
@@ -340,7 +341,7 @@ button:hover {
     gap: 1rem;
     border: 1px solid rgba(0, 0, 0, 0.126);
     align-items: center;
-    padding: 2rem;
+    padding: 1rem;
     border-radius: 1rem;
 }
 
