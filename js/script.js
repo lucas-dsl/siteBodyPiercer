@@ -1,34 +1,56 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Seleciona todos os botões que abrem modal com o atributo data-modal-id
+    // Botões para abrir (via data-modal-id)
     const botoesAbrir = document.querySelectorAll("[data-modal-id]");
+    // Botões "X" para fechar (qualquer .fechar dentro do modal)
     const botoesFechar = document.querySelectorAll(".fechar");
+
+    function abrirModal(modal) {
+        if (!modal) return;
+        modal.classList.add("visivel");
+        modal.setAttribute("aria-hidden", "false");
+        document.body.classList.add("body-trava-scroll"); // Trava scroll de fundo
+    }
+
+    function fecharModal(modal) {
+        if (!modal) return;
+        modal.classList.remove("visivel");
+        modal.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("body-trava-scroll");
+    }
 
     // Abrir o modal correto
     botoesAbrir.forEach(btn => {
         btn.addEventListener("click", () => {
             const modalId = btn.getAttribute("data-modal-id");
             const modal = document.getElementById(modalId);
-            if (modal) {
-                modal.classList.add("visivel");
-            }
+            abrirModal(modal);
         });
     });
 
-    // Fechar ao clicar no botão X
+    // Fechar pelo botão X
     botoesFechar.forEach(btn => {
         btn.addEventListener("click", () => {
             const modal = btn.closest(".modal");
-            if (modal) {
-                modal.classList.remove("visivel");
-            }
-
+            fecharModal(modal);
         });
     });
 
-    // Fechar ao clicar fora do conteúdo (overlay)
-    window.addEventListener("click", (e) => {
-        if (e.target.classList.contains("modal")) {
-            e.target.classList.remove("visivel");
+    // Fechar ao tocar/clicar fora do conteúdo:
+    // Fecha se tocou em qualquer área que NÃO esteja dentro de .conteudo
+    function backdropHandler(e) {
+        const modalAberto = e.target.closest(".modal");
+        const tocouDentro = e.target.closest(".conteudo");
+        if (modalAberto && !tocouDentro && modalAberto.classList.contains("visivel")) {
+            fecharModal(modalAberto);
+        }
+    }
+    document.addEventListener("click", backdropHandler);
+    document.addEventListener("touchstart", backdropHandler, { passive: true }); // iOS/Android
+
+    // Fechar com ESC
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+            document.querySelectorAll(".modal.visivel").forEach(fecharModal);
         }
     });
 });

@@ -311,12 +311,23 @@ button:hover {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease;
+    pointer-events: none;
 }
 
 
 .modal.visivel {
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
+}
+
+.body-trava-scroll {
+    overflow: hidden;
+}
+
+.conteudo{
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
 }
 
 
@@ -375,24 +386,24 @@ button:hover {
 }
 
 .item-info h3 {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
     font-weight: 600;
 }
 
 .item-info p {
     margin: 1rem 0;
     color: #b5b5b5;
-    font-size: 1.6rem;
+    font-size: 1.7rem;
 }
 
 .item-info strong {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     color: #979797;
 }
 
 .itens-catalogo img {
-    width: 10rem;
-    height: 10rem;
+    width: 10.5rem;
+    height: 10.5rem;
     object-fit: cover;
     border-radius: 1rem;
 }
@@ -438,7 +449,7 @@ button:hover {
 }
 
 .desc-perfuracao h3 {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
     color: #000000;
     font-weight: bold;
     margin: .5rem 0;
@@ -447,12 +458,12 @@ button:hover {
 .desc-perfuracao p {
     color: #b5b5b5;
     font-weight: 600;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
 }
 
 .desc-perfuracao span {
     color: #676767;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
 }
 
 /* MATERIAL DAS JÓIAS */
@@ -616,8 +627,13 @@ address p {
     font-size: 1.5rem;
 }
 
+.alinhaMapa {
+    display: flex;
+    justify-content: center;
+}
+
 .mapa {
-    width: 95%;
+    width: 92%;
     height: 35rem;
     margin-bottom: 8rem;
     position: relative;
