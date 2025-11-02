@@ -535,6 +535,21 @@ button:hover {
     background: url(../imgs/fotos/capaPerfuracao2.png) center / cover no-repeat;
 }
 
+.local-perfuracoes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 8rem 0;
+}
+
+.local-perfuracoes h2 {
+    font-size: 3rem;
+}
+
+.local-perfuracoes img {
+    width: 50rem;
+}
+
 /* CHAMADA PARA O INSTAGRAM */
 .infoInsta {
     display: flex;
@@ -683,7 +698,7 @@ footer {
 
 .caixaFooter p,
 .linkSecao {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     color: #c6c6c6;
 }
 
@@ -707,7 +722,7 @@ footer {
     justify-content: center;
     width: 100%;
     gap: 2rem;
-    font-size: 2rem;
+    font-size: 2.2rem;
 }
 
 .botoesFooter a {
@@ -744,7 +759,7 @@ footer {
 }
 
 .copyright {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     text-align: center;
     color: #c6c6c6;
 }
