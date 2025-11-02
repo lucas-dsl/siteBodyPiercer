@@ -17,6 +17,7 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsividade.css">
 
     <title>Aline Martinelli - Body Piercer</title>
 </head>
@@ -27,7 +28,7 @@
     <header>
         <section class="sectionHero" aria-label="Seção principal com imagem e cta">
             <div class="heroConteudo">
-                <img src="imgs/fotos/logo.png" alt="Logo do estúdio Aline Martinelli Body Piercer">
+                <img src="imgs/fotos/logo.png" alt="Logo do estúdio Aline Martinelli Body Piercer" class="logo-estudio">
                 <h1>Arte e Profissionalismo em Body Piercing</h1>
 
                 <nav class="botoes" aria-label="Links principais de contato">
@@ -106,7 +107,7 @@
                     <img src="imgs/fotos/capa.png" alt="Joias em titânio prateado" class="imgCatalogo">
                     <div class="descricaoCatalogo">
                         <h3>Joias em <span class="destaqueTitanio">Titânio</span></h3>
-                        <p>Peças em titânio na coloração prata com alta durabilidade.</p>
+                        <p>Peças em titânio na coloração prateada com alta durabilidade.</p>
                         <button type="button" aria-label="Ver catálogo completo de joias em titânio" id="abrirCatalogo"
                             data-modal-id="modalJoias1">Ver catálogo
                             completo</button>
@@ -385,39 +386,41 @@
             </header>
 
             <div class="container">
-                <div class="caixa">
-                    <div class="linhaTitulo">
-                        <img src="imgs/icones/icone-localização.png" alt="Ícone de localização">
-                        <p>Endereço</p>
+                <div class="caixas-localEhorario">
+                    <div class="caixa">
+                        <div class="linhaTitulo">
+                            <img src="imgs/icones/icone-localização.png" alt="Ícone de localização">
+                            <p>Endereço</p>
+                        </div>
+                        <address>
+                            <p class="linhaEndereco">Avenida Santo Antônio, 131 - Centro</p>
+                            <p class="linhaEndereco">São José do Cedro - SC</p>
+                            <p class="linhaEndereco">CEP 89930-000</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Rua%20Santo%20Ant%C3%B4nio%2C%20131%20-%20Centro%2C%20S%C3%A3o%20Jos%C3%A9%20do%20Cedro%20-%20SC%2C%2089930-000%2C%20Brasil"
+                                target="_blank" class="linhaVerNoMapa" rel="noopener noreferrer"
+                                aria-label="Abrir localização no Google Maps">Ver no Google Maps</a>
+                        </address>
                     </div>
-                    <address>
-                        <p class="linhaEndereco">Avenida Santo Antônio, 131 - Centro</p>
-                        <p class="linhaEndereco">São José do Cedro - SC</p>
-                        <p class="linhaEndereco">CEP 89930-000</p>
-                        <a href="https://www.google.com/maps/search/?api=1&query=Rua%20Santo%20Ant%C3%B4nio%2C%20131%20-%20Centro%2C%20S%C3%A3o%20Jos%C3%A9%20do%20Cedro%20-%20SC%2C%2089930-000%2C%20Brasil"
-                            target="_blank" class="linhaVerNoMapa" rel="noopener noreferrer"
-                            aria-label="Abrir localização no Google Maps">Ver no Google Maps</a>
-                    </address>
-                </div>
 
-                <div class="caixa">
-                    <div class="linhaTitulo">
-                        <img src="imgs/icones/icone-tempo.png" alt="Ícone de relógio indicando horário">
-                        <p>Horário</p>
+                    <div class="caixa">
+                        <div class="linhaTitulo">
+                            <img src="imgs/icones/icone-tempo.png" alt="Ícone de relógio indicando horário">
+                            <p>Horário</p>
+                        </div>
+                        <div class="linhaHorario">
+                            <p>Segunda a Sexta:</p>
+                            <p>Após às 17h</p>
+                        </div>
+                        <div class="linhaHorario">
+                            <p>Sábado:</p>
+                            <p>Agendar</p>
+                        </div>
+                        <div class="linhaHorario">
+                            <p>Domingo:</p>
+                            <p>Agendar</p>
+                        </div>
+                        <p class="infoAgendamento">📅 Sábado e Domingo Atendimento com Agendamento</p>
                     </div>
-                    <div class="linhaHorario">
-                        <p>Segunda a Sexta:</p>
-                        <p>Após às 17h</p>
-                    </div>
-                    <div class="linhaHorario">
-                        <p>Sábado:</p>
-                        <p>Agendar</p>
-                    </div>
-                    <div class="linhaHorario">
-                        <p>Domingo:</p>
-                        <p>Agendar</p>
-                    </div>
-                    <p class="infoAgendamento">📅 Sábado e Domingo Atendimento com Agendamento</p>
                 </div>
 
                 <div class="mapa">
@@ -435,7 +438,8 @@
         <div class="containerFooter">
             <div class="caixaFooter">
                 <h3>Sobre o Estúdio</h3>
-                <p>Especializado em body piercing com anos de experiência, priorizando segurança, qualidade e
+                <p class="p-caixaFooter">Especializado em body piercing com anos de experiência, priorizando segurança,
+                    qualidade e
                     satisfação do cliente.</p>
             </div>
             <div class="caixaFooter">

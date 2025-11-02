@@ -295,14 +295,24 @@ button:hover {
 
 /* MODAIS (CATÁLOGO E PERFURAÇÕES)*/
 .modal {
-    display: none;
+    display: flex;
     position: fixed;
     inset: 0;
     background-color: rgba(0, 0, 0, 0.6);
     justify-content: center;
     align-items: center;
     z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
 }
+
+
+.modal.visivel {
+    opacity: 1;
+    visibility: visible;
+}
+
 
 .fechar {
     float: right;
@@ -317,6 +327,14 @@ button:hover {
     height: 70vh;
     border-radius: 1rem;
     overflow-y: auto;
+    transform: scale(0.96);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.modal.visivel .conteudo {
+  transform: scale(1);
+  opacity: 1;
 }
 
 .conteudo h2 {
@@ -526,7 +544,11 @@ button:hover {
 /* SEÇÃO LOCALIZAÇÃO */
 .container {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.caixas-localEhorario {
+    display: flex;
     justify-content: space-around;
     gap: 4rem;
 }
@@ -641,6 +663,10 @@ footer {
 .linkSecao {
     font-size: 1.4rem;
     color: #c6c6c6;
+}
+
+.p-caixaFooter {
+    width: 60%;
 }
 
 .caixaFooter a {
