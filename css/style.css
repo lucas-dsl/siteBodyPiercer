@@ -50,6 +50,12 @@ body {
     width: 60%;
 }
 
+/* UTILITÁRIOS DE FOCO */
+.img-focus-top    { object-position: 50% 15%; }
+.img-focus-bottom { object-position: 50% 85%; }
+.img-focus-left   { object-position: 15% 50%; }
+.img-focus-right  { object-position: 85% 50%; }
+
 /* BOTÕES E ELEMENTOS CLICÁVEIS */
 button {
     border: none;
@@ -421,7 +427,7 @@ button:hover {
 
 .item-perfuracao img {
     width: 100%;
-    height: 25rem;
+    aspect-ratio: 3 / 4;
     object-fit: cover;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
