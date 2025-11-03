@@ -81,6 +81,9 @@ sr.reveal('.caixaCatalogo:nth-of-type(2)', {origin: 'right'});
 sr.reveal('.caixaPerfuracoes:nth-of-type(1)', {origin: 'left'});
 sr.reveal('.caixaPerfuracoes:nth-of-type(2)', {origin: 'right'});
 
+// LOCAL DAS PERFURAÇÕES
+sr.reveal('.local-perfuracoes', {origin: 'bottom'});
+
 // ANIMAÇÃO LOCALIZAÇÃO E HORÁRIO
 sr.reveal('.caixa:nth-of-type(1)', {origin: 'left'});
 sr.reveal('.caixa:nth-of-type(2)', {origin: 'right'});
