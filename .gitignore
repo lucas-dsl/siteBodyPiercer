@@ -1,0 +1,8 @@
+# Supabase CLI local state
+supabase/.temp/
+
+# Local environment files and generated previews
+.env
+.env.*
+*.local
+*-preview.png
