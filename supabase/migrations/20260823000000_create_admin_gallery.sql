@@ -1,11 +1,9 @@
--- Execute uma vez no SQL Editor do Supabase.
-
--- Usuários que podem acessar o painel.
+-- Única conta administrativa do site.
 create table public.admin_users (
     user_id uuid primary key references auth.users(id) on delete cascade
 );
 
--- Conteúdo administrável do site.
+-- Fotos e informações exibidas nas galerias públicas.
 create table public.galeria (
     id bigint generated always as identity primary key,
     arquivo_id uuid not null unique,
@@ -30,21 +28,21 @@ create index galeria_listagem_idx
 alter table public.admin_users enable row level security;
 alter table public.galeria enable row level security;
 
--- A pessoa autenticada só consegue confirmar o próprio acesso administrativo.
+-- A usuária autenticada pode confirmar se possui acesso administrativo.
 create policy "admin_confirma_proprio_acesso"
 on public.admin_users
 for select
 to authenticated
 using (user_id = (select auth.uid()));
 
--- Visitantes enxergam somente itens publicados.
+-- Visitantes sem login enxergam somente itens publicados.
 create policy "publico_le_publicados"
 on public.galeria
 for select
 to anon
 using (ativo = true);
 
--- Administradores podem executar o CRUD completo.
+-- Apenas quem está em admin_users pode gerenciar a galeria.
 create policy "admin_gerencia_galeria"
 on public.galeria
 for all
@@ -61,12 +59,20 @@ grant select on public.galeria to anon, authenticated;
 grant insert, update, delete on public.galeria to authenticated;
 grant usage, select on sequence public.galeria_id_seq to authenticated;
 
--- Bucket público: qualquer visitante pode visualizar, somente admins podem alterar.
+-- As imagens são públicas, mas somente a administradora pode modificá-las.
 insert into storage.buckets (
-    id, name, public, file_size_limit, allowed_mime_types
+    id,
+    name,
+    public,
+    file_size_limit,
+    allowed_mime_types
 )
 values (
-    'galeria', 'galeria', true, 1048576, array['image/webp']
+    'galeria',
+    'galeria',
+    true,
+    1048576,
+    array['image/webp']
 );
 
 create policy "admin_gerencia_arquivos"
@@ -82,7 +88,3 @@ with check (
     and (storage.foldername(name))[1] in ('imagens', 'miniaturas')
     and (select auth.uid()) in (select user_id from public.admin_users)
 );
-
--- Depois de criar a conta em Authentication > Users, autorize-a assim:
--- insert into public.admin_users (user_id)
--- select id from auth.users where email = 'EMAIL_DA_CLIENTE';
