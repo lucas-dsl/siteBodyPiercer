@@ -29,24 +29,34 @@ function canvasToBlob(canvas, quality) {
 
 async function resize(image, maxDimension, initialQuality, targetBytes) {
     const ratio = Math.min(1, maxDimension / Math.max(image.naturalWidth, image.naturalHeight));
-    const width = Math.max(1, Math.round(image.naturalWidth * ratio));
-    const height = Math.max(1, Math.round(image.naturalHeight * ratio));
+    let width = Math.max(1, Math.round(image.naturalWidth * ratio));
+    let height = Math.max(1, Math.round(image.naturalHeight * ratio));
     const canvas = document.createElement("canvas");
-    canvas.width = width;
-    canvas.height = height;
-    const context = canvas.getContext("2d", { alpha: false });
-    context.fillStyle = "#ffffff";
-    context.fillRect(0, 0, width, height);
-    context.imageSmoothingEnabled = true;
-    context.imageSmoothingQuality = "high";
-    context.drawImage(image, 0, 0, width, height);
-    let quality = initialQuality;
-    let blob = await canvasToBlob(canvas, quality);
-    while (blob.size > targetBytes && quality > 0.46) {
-        quality -= 0.06;
-        blob = await canvasToBlob(canvas, quality);
+
+    for (let attempt = 0; attempt < 20; attempt += 1) {
+        canvas.width = width;
+        canvas.height = height;
+        const context = canvas.getContext("2d", { alpha: false });
+        context.fillStyle = "#ffffff";
+        context.fillRect(0, 0, width, height);
+        context.imageSmoothingEnabled = true;
+        context.imageSmoothingQuality = "high";
+        context.drawImage(image, 0, 0, width, height);
+
+        let quality = initialQuality;
+        let blob = await canvasToBlob(canvas, quality);
+        while (blob.size > targetBytes && quality > 0.36) {
+            quality = Math.max(0.36, quality - 0.06);
+            blob = await canvasToBlob(canvas, quality);
+        }
+
+        if (blob.size <= targetBytes) return blob;
+
+        width = Math.max(1, Math.round(width * 0.85));
+        height = Math.max(1, Math.round(height * 0.85));
     }
-    return blob;
+
+    throw new Error("Não foi possível preparar esta foto. Escolha uma imagem de até 15 MB ou uma versão com resolução menor.");
 }
 
 export async function processImage(file) {

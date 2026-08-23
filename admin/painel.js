@@ -291,6 +291,21 @@ async function removeFiles(paths) {
     return error;
 }
 
+async function orderAlreadyExists(category, order, currentId) {
+    let query = supabase
+        .from("galeria")
+        .select("id")
+        .eq("categoria", category)
+        .eq("ordem", order)
+        .limit(1);
+
+    if (currentId) query = query.neq("id", currentId);
+
+    const { data, error } = await query;
+    if (error) throw error;
+    return data.length > 0;
+}
+
 async function saveItem(event) {
     event.preventDefault();
     hideMessage(elements.formFeedback);
@@ -305,7 +320,6 @@ async function saveItem(event) {
     let uploaded = null;
 
     try {
-        if (processedImage) uploaded = await uploadImages();
         const payload = {
             categoria: elements.category.value,
             titulo: elements.title.value.trim(),
@@ -313,6 +327,12 @@ async function saveItem(event) {
             ordem: Number(elements.sortOrder.value),
             ativo: elements.active.checked
         };
+
+        if (await orderAlreadyExists(payload.categoria, payload.ordem, elements.id.value)) {
+            throw new Error("Já existe uma foto com essa ordem nesta categoria.");
+        }
+
+        if (processedImage) uploaded = await uploadImages();
         if (uploaded) {
             payload.arquivo_id = uploaded.fileId;
         }
