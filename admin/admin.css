@@ -105,7 +105,6 @@ input:disabled, button:disabled { cursor: not-allowed; opacity: .58; }
 .button-danger { color: #fff; background: var(--danger); }
 .button-danger:hover:not(:disabled) { background: var(--danger-hover); }
 .button-small { min-height: 38px; padding: 7px 13px; font-size: 13px; }
-.button-link { justify-self: center; border: 0; padding: 0; color: var(--primary); background: transparent; font-weight: 600; cursor: pointer; }
 .back-link { color: var(--muted); font-size: 13px; text-decoration: none; }
 
 .alert { padding: 12px 14px; border: 1px solid; border-radius: 10px; font-size: 13px; line-height: 1.5; }

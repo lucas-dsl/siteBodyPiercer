@@ -20,12 +20,11 @@ de conferir o projeto vinculado em `supabase/.temp/project-ref`.
 1. Em **Authentication > Providers > Email**, mantenha login por e-mail ativo.
 2. Desative novos cadastros públicos em **Authentication > Settings**.
 3. Em **Authentication > URL Configuration**, defina a URL publicada do site como `Site URL`.
-4. Adicione às `Redirect URLs` a URL completa de `admin/nova-senha.html`.
 
-Durante desenvolvimento local, adicione também a origem usada pelo servidor local, por exemplo:
+Durante o desenvolvimento, use um servidor local, por exemplo:
 
 ```text
-http://localhost:5500/**
+http://localhost:5500/admin/
 ```
 
 Não abra os HTMLs diretamente com `file://`; use um servidor HTTP local.
@@ -46,11 +45,11 @@ Para autorizar também o desenvolvedor, repita com o segundo e-mail.
 
 ## 4. Conectar o frontend
 
-Abra `js/supabase-client.js` e substitua:
+O arquivo `js/supabase-client.js` contém a URL e a chave publicável do projeto:
 
 ```js
-const SUPABASE_URL = "COLE_AQUI_A_URL_DO_SUPABASE";
-const SUPABASE_PUBLISHABLE_KEY = "COLE_AQUI_A_CHAVE_PUBLICAVEL_DO_SUPABASE";
+const SUPABASE_URL = "https://PROJECT_REF.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_...";
 ```
 
 Use somente a chave **Publishable** (`sb_publishable_...`). A chave Secret e a antiga `service_role` nunca devem entrar nos arquivos do site.

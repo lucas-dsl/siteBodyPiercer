@@ -4,7 +4,6 @@ const form = document.querySelector("#login-form");
 const feedback = document.querySelector("#feedback");
 const configAlert = document.querySelector("#config-alert");
 const loginButton = document.querySelector("#login-button");
-const forgotButton = document.querySelector("#forgot-button");
 
 function mostrarMensagem(message, type = "error") {
     feedback.textContent = message;
@@ -39,7 +38,6 @@ if (!supabaseConfigurado) {
     configAlert.textContent = "Integração pendente: configure o Supabase em js/supabase-client.js.";
     configAlert.hidden = false;
     form.querySelectorAll("input, button").forEach((element) => element.disabled = true);
-    forgotButton.disabled = true;
 } else {
     const { data: { session } } = await supabase.auth.getSession();
     if (session) window.location.replace("painel.html");
@@ -62,26 +60,5 @@ form.addEventListener("submit", async (event) => {
     } catch (error) {
         mostrarMensagem(traduzirErro(error));
         alternarCarregamento(loginButton, false, "Entrar");
-    }
-});
-
-forgotButton.addEventListener("click", async () => {
-    const email = document.querySelector("#email").value.trim();
-    if (!email) {
-        mostrarMensagem("Informe seu e-mail para receber o link de recuperação.");
-        document.querySelector("#email").focus();
-        return;
-    }
-
-    forgotButton.disabled = true;
-    try {
-        const redirectTo = new URL("nova-senha.html", window.location.href).href;
-        const { error } = await supabase.auth.resetPasswordForEmail(email, { redirectTo });
-        if (error) throw error;
-        mostrarMensagem("Se o e-mail estiver cadastrado, você receberá um link para criar outra senha.", "success");
-    } catch (error) {
-        mostrarMensagem(traduzirErro(error));
-    } finally {
-        forgotButton.disabled = false;
     }
 });
