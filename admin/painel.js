@@ -393,6 +393,7 @@ elements.closeDialog.addEventListener("click", closeEditDialog);
 elements.cancel.addEventListener("click", closeEditDialog);
 elements.file.addEventListener("change", handleImageSelection);
 elements.form.addEventListener("submit", saveItem);
+elements.sortOrder.addEventListener("wheel", (event) => event.currentTarget.blur());
 elements.search.addEventListener("input", renderItems);
 elements.categoryFilter.addEventListener("change", renderItems);
 elements.statusFilter.addEventListener("change", renderItems);
