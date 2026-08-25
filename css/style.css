@@ -76,7 +76,7 @@ button:hover {
 /* SEÇÃO HERO */
 .sectionHero {
     position: relative;
-    background: url(../imgs/fotos/fotoEstudio.jpg) center / cover no-repeat;
+    background: url(../imgs/fotos/fotoEstudio.webp) center / cover no-repeat;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -156,6 +156,7 @@ button:hover {
     border-radius: 2rem;
     position: relative;
     animation: scroll 1.2s infinite;
+    will-change: translate;
 }
 
 .bolinha {
@@ -174,11 +175,11 @@ button:hover {
 
     0%,
     100% {
-        top: 100px;
+        translate: 0 100px;
     }
 
     50% {
-        top: 110px;
+        translate: 0 110px;
     }
 }
 
@@ -268,6 +269,9 @@ button:hover {
 
 .imgCatalogo {
     width: 100%;
+    height: auto;
+    aspect-ratio: 1024 / 731;
+    object-fit: cover;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
 }
@@ -482,6 +486,17 @@ button:hover {
     text-align: center;
 }
 
+.galeria-mensagem {
+    grid-column: 1 / -1;
+    width: 100%;
+    padding: 3rem 2rem;
+    border: 1px dashed #c9c0bc;
+    border-radius: 1rem;
+    color: #676767;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
 .imagem-galeria-interativa {
     cursor: zoom-in;
 }
@@ -590,7 +605,8 @@ button:hover {
     justify-content: end;
     align-items: flex-start;
     width: 40%;
-    height: 50rem;
+    height: auto;
+    aspect-ratio: 1 / 1;
     padding: 2rem;
     border-radius: 1rem;
     gap: 1.5rem;
@@ -614,11 +630,11 @@ button:hover {
 }
 
 .caixaPerfuracoes:nth-child(1) {
-    background: url(../imgs/fotos/capaPerfuracao.png) center / cover no-repeat;
+    background: url(../imgs/fotos/capaPerfuracao.webp) center / cover no-repeat;
 }
 
 .caixaPerfuracoes:nth-child(2) {
-    background: url(../imgs/fotos/capaPerfuracao2.png) center / cover no-repeat;
+    background: url(../imgs/fotos/capaPerfuracao2.webp) center / cover no-repeat;
 }
 
 .local-perfuracoes {
@@ -634,6 +650,7 @@ button:hover {
 
 .local-perfuracoes img {
     width: 50rem;
+    height: auto;
 }
 
 /* CHAMADA PARA O INSTAGRAM */

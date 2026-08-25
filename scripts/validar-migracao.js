@@ -102,7 +102,7 @@ async function main() {
     const config = credentials();
     const inventory = JSON.parse(await fs.readFile(INVENTORY_PATH, "utf8"));
     const html = await fs.readFile(path.join(ROOT, "index.html"), "utf8");
-    const htmlItems = [...html.matchAll(/src="imgs\/(?:catalogoJoias|portfolio)\//g)].length;
+    const htmlItems = [...html.matchAll(/class="(?:item|item-perfuracao)"/g)].length;
     const expectedIds = new Set(inventory.map(deterministicUuid));
 
     const rowsResponse = await request(
@@ -139,7 +139,7 @@ async function main() {
     const urlFailures = await validateUrls(urls);
 
     const checks = {
-        itens_html: htmlItems,
+        cards_estaticos_html: htmlItems,
         registros_inventario: inventory.length,
         registros_banco: rows.length,
         imagens_principais: mainObjects.length,
@@ -148,7 +148,11 @@ async function main() {
         urls_com_erro: urlFailures.length
     };
     const valid =
-        Object.values(checks).slice(0, 5).every((count) => count === inventory.length) &&
+        checks.cards_estaticos_html === 0 &&
+        checks.registros_inventario === inventory.length &&
+        checks.registros_banco === inventory.length &&
+        checks.imagens_principais === inventory.length &&
+        checks.miniaturas === inventory.length &&
         checks.urls_testadas === inventory.length * 2 &&
         checks.urls_com_erro === 0 &&
         unexpectedRows.length === 0 && missingRows.length === 0 &&

@@ -99,10 +99,25 @@ function prepararVisualizador() {
     });
 }
 
+function criarMensagem(texto) {
+    const mensagem = document.createElement("p");
+    mensagem.className = "galeria-mensagem";
+    mensagem.textContent = texto;
+    return mensagem;
+}
+
+function preencherGradesComMensagem(texto) {
+    document.querySelectorAll("[data-gallery-category]").forEach((grade) => {
+        grade.replaceChildren(criarMensagem(texto));
+        grade.setAttribute("aria-busy", "false");
+    });
+}
+
 function exibirAviso() {
     statusGaleria.textContent =
-        "Não foi possível atualizar as galerias agora. Exibindo o conteúdo disponível.";
+        "Não foi possível carregar as fotos agora. Tente novamente em alguns instantes.";
     statusGaleria.hidden = false;
+    preencherGradesComMensagem("Fotos temporariamente indisponíveis.");
 }
 
 async function carregarGalerias() {
@@ -132,13 +147,18 @@ async function carregarGalerias() {
         const categoria = grade.dataset.galleryCategory;
         const itens = itensPorCategoria[categoria] || [];
 
-        if (itens.length === 0) return;
+        if (itens.length === 0) {
+            grade.replaceChildren(criarMensagem("Nenhuma foto disponível nesta categoria no momento."));
+            grade.setAttribute("aria-busy", "false");
+            return;
+        }
 
         const criarCard = categoria.startsWith("joia_")
             ? criarCardJoia
             : criarCardPerfuracao;
 
         grade.replaceChildren(...itens.map(criarCard));
+        grade.setAttribute("aria-busy", "false");
     });
 }
 

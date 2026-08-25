@@ -88,6 +88,14 @@
         grid-template-columns: 1fr;
     }
 
+    .itens-perfuracoes[data-gallery-category] {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .itens-perfuracoes[data-gallery-category] .item-perfuracao {
+        width: 100%;
+    }
+
     html {
         font-size: 55%;
     }
