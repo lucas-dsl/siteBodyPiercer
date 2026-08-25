@@ -428,7 +428,10 @@ button:hover {
 }
 
 .itens-perfuracoes[data-gallery-category] {
-    grid-template-columns: repeat(auto-fill, minmax(20rem, 20rem));
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(max(20rem, calc((100% - 9rem) / 4)), 1fr)
+    );
 }
 
 .item-perfuracao {

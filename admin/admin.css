@@ -41,7 +41,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
     padding: 24px;
     background:
         linear-gradient(rgba(20, 16, 14, .76), rgba(20, 16, 14, .76)),
-        url("../imgs/fotos/fotoEstudio.jpg") center / cover fixed;
+        url("../imgs/fotos/fotoEstudio.webp") center / cover fixed;
 }
 
 .auth-card {
