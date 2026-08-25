@@ -371,6 +371,10 @@ button:hover {
     gap: 2rem;
 }
 
+.itens-catalogo[data-gallery-category] {
+    grid-template-columns: repeat(auto-fill, minmax(30rem, 30rem));
+}
+
 .item {
     display: flex;
     gap: 1rem;
@@ -423,6 +427,10 @@ button:hover {
     max-width: 100%;
 }
 
+.itens-perfuracoes[data-gallery-category] {
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 20rem));
+}
+
 .item-perfuracao {
     border: 1px solid #75757541;
     border-radius: 1rem;
@@ -464,6 +472,88 @@ button:hover {
 .desc-perfuracao span {
     color: #676767;
     font-size: 1.6rem;
+}
+
+.galeria-status {
+    max-width: 70rem;
+    margin: 2rem auto;
+    padding: 1.2rem 2rem;
+    border: 1px solid #d8b36a;
+    border-radius: 1rem;
+    background-color: #fff8e8;
+    color: #684d19;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.imagem-galeria-interativa {
+    cursor: zoom-in;
+}
+
+.imagem-galeria-interativa:focus-visible {
+    outline: 3px solid #8b5e3c;
+    outline-offset: 3px;
+}
+
+.visualizador-galeria {
+    position: fixed;
+    inset: 0;
+    width: min(90vw, 52rem);
+    max-height: 85vh;
+    margin: auto;
+    padding: 0;
+    border: 0;
+    border-radius: 1rem;
+    overflow: auto;
+    background-color: #fff;
+    color: #111;
+}
+
+.visualizador-galeria::backdrop {
+    background-color: rgba(0, 0, 0, 0.82);
+}
+
+.visualizador-galeria img {
+    display: block;
+    width: 100%;
+    height: min(60vh, 52rem);
+    object-fit: contain;
+    object-position: center;
+    background-color: #111;
+}
+
+.visualizador-fechar {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.72);
+    color: #fff;
+    font-size: 3rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.visualizador-legenda {
+    padding: 1.5rem 2rem 2rem;
+}
+
+.visualizador-legenda h2 {
+    font-size: 2.2rem;
+}
+
+.visualizador-legenda p {
+    margin-top: .5rem;
+    color: #676767;
+    font-size: 1.5rem;
 }
 
 /* MATERIAL DAS JÓIAS */

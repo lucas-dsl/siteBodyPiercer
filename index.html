@@ -52,6 +52,7 @@
     </header>
 
     <main>
+        <p id="galeria-status" class="galeria-status" role="status" aria-live="polite" hidden></p>
         <!-- SEÇÃO SOBRE A PROFISSIONAL -->
         <section class="marginX" id="sobre" aria-labelledby="titulo-sobre">
             <div class="sobre-conteudo">
@@ -127,7 +128,7 @@
                             da distribuidora
                         </p>
 
-                        <div class="itens-catalogo">
+                        <div class="itens-catalogo" data-gallery-category="joia_titanio">
                             <div class="item">
                                 <img src="imgs/catalogoJoias/joia1.jpg" alt="Labret em titânio prateado" />
                                 <div class="item-info">
@@ -257,7 +258,7 @@
                         <p class="modal-subtitulo">Joias disponíveis no estúdio - Materiais certificados conforme laudo
                             da distribuidora</p>
 
-                        <div class="itens-catalogo">
+                        <div class="itens-catalogo" data-gallery-category="joia_gold">
                             <div class="item">
                                 <img src="imgs/catalogoJoias/joia2.jpg" alt="Brincos em titânio PVD Gold" />
                                 <div class="item-info">
@@ -444,7 +445,7 @@
                         <span class="fechar">&times;</span>
                         <h2>Galeria de Perfurações</h2>
                         <p class="modal-subtitulo">Perfurações realizadas no estúdio com técnicas profissionais</p>
-                        <div class="itens-perfuracoes">
+                        <div class="itens-perfuracoes" data-gallery-category="perfuracao_orelha">
                             <div class="item-perfuracao">
                                 <img src="imgs/portfolio/perfuracao6.png" alt="Piercings no lóbulo, hélix e tragus" />
                                 <div class="desc-perfuracao">
@@ -657,7 +658,7 @@
                     <span class="fechar">&times;</span>
                     <h2>Galeria de Perfurações</h2>
                     <p class="modal-subtitulo">Perfurações realizadas no estúdio com técnicas profissionais</p>
-                    <div class="itens-perfuracoes">
+                    <div class="itens-perfuracoes" data-gallery-category="perfuracao_outras">
                         <div class="item-perfuracao">
                             <img src="imgs/portfolio/perfuracao1.jpg" alt="Piercing nostril no nariz" />
                             <div class="desc-perfuracao">
@@ -807,6 +808,15 @@
         </section>
     </main>
 
+    <dialog id="visualizador-galeria" class="visualizador-galeria" aria-labelledby="visualizador-titulo">
+        <button type="button" class="visualizador-fechar" aria-label="Fechar imagem ampliada">&times;</button>
+        <img id="visualizador-imagem" alt="">
+        <div class="visualizador-legenda">
+            <h2 id="visualizador-titulo"></h2>
+            <p id="visualizador-descricao"></p>
+        </div>
+    </dialog>
+
     <!-- FOOTER -->
     <footer>
         <div class="containerFooter">
@@ -855,6 +865,7 @@
     <!-- JavaScript -->
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="js/script.js"></script>
+    <script type="module" src="js/galeria.js"></script>
 </body>
 
 </html>
