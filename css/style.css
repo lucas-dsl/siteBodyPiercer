@@ -519,7 +519,7 @@ button:hover {
     height: min(60vh, 52rem);
     object-fit: contain;
     object-position: center;
-    background-color: #111;
+    background-color: #fff;
 }
 
 .visualizador-fechar {
