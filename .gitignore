@@ -1,0 +1,13 @@
+# Supabase CLI local state
+supabase/.temp/
+
+# Local environment files and generated previews
+.env
+.env.*
+*.local
+*-preview.png
+node_modules/
+
+# Migration output (may contain remote operation details)
+migration/resultado.json
+migration/validacao.json

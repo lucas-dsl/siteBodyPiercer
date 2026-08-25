@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Entrar | Aline Martinelli</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body class="auth-page">
+    <main class="auth-card">
+        <a class="brand" href="../index.html" aria-label="Voltar para o site">
+            <img src="../imgs/fotos/logo.png" alt="Aline Martinelli Body Piercer">
+        </a>
+
+        <div>
+            <p class="eyebrow">ÁREA ADMINISTRATIVA</p>
+            <h1>Bem-vinda</h1>
+            <p class="muted">Entre para administrar as joias e perfurações do site.</p>
+        </div>
+
+        <div id="config-alert" class="alert alert-warning" hidden></div>
+        <div id="feedback" class="alert" role="status" aria-live="polite" hidden></div>
+
+        <form id="login-form" class="form-stack">
+            <div class="field">
+                <label for="email">E-mail</label>
+                <input id="email" name="email" type="email" autocomplete="username" required>
+            </div>
+            <div class="field">
+                <label for="password">Senha</label>
+                <div class="password-field">
+                    <input id="password" name="password" type="password" autocomplete="current-password" required>
+                    <button class="password-toggle" type="button" data-password-toggle="password" aria-label="Mostrar senha">Mostrar</button>
+                </div>
+            </div>
+            <button id="login-button" class="button button-primary" type="submit">Entrar</button>
+        </form>
+
+        <a class="back-link" href="../index.html">← Voltar para o site</a>
+    </main>
+
+    <script type="module" src="auth.js"></script>
+</body>
+</html>

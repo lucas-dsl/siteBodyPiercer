@@ -1,0 +1,13 @@
+{
+  "name": "site-body-piercer",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "migrar:galeria": "node scripts/migrar-galeria.js",
+    "migrar:galeria:dry-run": "node scripts/migrar-galeria.js --dry-run",
+    "validar:galeria": "node scripts/validar-migracao.js"
+  },
+  "dependencies": {
+    "sharp": "^0.35.3"
+  }
+}
