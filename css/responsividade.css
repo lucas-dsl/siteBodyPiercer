@@ -41,6 +41,10 @@
 }
 
 @media (max-width: 775px) {
+    .itens-catalogo {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .sobre-conteudo {
         flex-direction: column;
     }
@@ -80,6 +84,10 @@
 }
 
 @media (max-width: 600px) {
+    .itens-catalogo {
+        grid-template-columns: 1fr;
+    }
+
     html {
         font-size: 55%;
     }

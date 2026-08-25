@@ -367,12 +367,8 @@ button:hover {
 
 .itens-catalogo {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 2fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 2rem;
-}
-
-.itens-catalogo[data-gallery-category] {
-    grid-template-columns: repeat(auto-fill, minmax(30rem, 30rem));
 }
 
 .item {
