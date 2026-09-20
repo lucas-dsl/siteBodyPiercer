@@ -6,17 +6,9 @@ export { supabaseConfigurado };
 export const supabase = supabaseConfigurado
     ? createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {
         auth: {
-            persistSession: true,
-            autoRefreshToken: true,
+            persistSession: false,
+            autoRefreshToken: false,
             detectSessionInUrl: false
         }
     })
     : null;
-
-export function exigirSupabaseConfigurado() {
-    if (!supabaseConfigurado) {
-        throw new Error(
-            "Configure a URL e a chave publicável em js/supabase-config.js."
-        );
-    }
-}

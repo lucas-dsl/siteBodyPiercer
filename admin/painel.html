@@ -89,8 +89,6 @@
             <input id="item-id" type="hidden">
             <input id="current-file-id" type="hidden">
 
-            <div id="form-feedback" class="alert" role="status" aria-live="polite" hidden></div>
-
             <div class="upload-area">
                 <img id="image-preview" alt="Pré-visualização da imagem" hidden>
                 <div id="upload-placeholder">
@@ -130,7 +128,8 @@
                 </label>
             </div>
 
-            <footer class="dialog-footer">
+            <footer class="dialog-footer item-dialog-footer">
+                <div id="form-feedback" class="alert" role="status" aria-live="polite" hidden></div>
                 <button id="cancel-button" class="button button-secondary" type="button">Cancelar</button>
                 <button id="save-button" class="button button-primary" type="submit">Salvar</button>
             </footer>

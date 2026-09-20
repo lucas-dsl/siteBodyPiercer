@@ -427,7 +427,7 @@ elements.deleteDialog.addEventListener("click", (event) => {
 });
 
 if (!supabaseConfigurado) {
-    elements.configAlert.textContent = "Configure a URL e a chave publicável em js/supabase-client.js antes de usar o painel.";
+    elements.configAlert.textContent = "Configure a URL e a chave publicável em js/supabase-config.js antes de usar o painel.";
     elements.configAlert.hidden = false;
     elements.loading.hidden = true;
     elements.newButton.disabled = true;

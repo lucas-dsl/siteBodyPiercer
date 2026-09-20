@@ -35,7 +35,7 @@ document.querySelectorAll("[data-password-toggle]").forEach((button) => {
 });
 
 if (!supabaseConfigurado) {
-    configAlert.textContent = "Integração pendente: configure o Supabase em js/supabase-client.js.";
+    configAlert.textContent = "Integração pendente: configure o Supabase em js/supabase-config.js.";
     configAlert.hidden = false;
     form.querySelectorAll("input, button").forEach((element) => element.disabled = true);
 } else {
