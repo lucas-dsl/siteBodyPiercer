@@ -95,7 +95,7 @@ async function requireAdmin() {
     exigirSupabaseConfigurado();
     const { data: { session }, error: sessionError } = await supabase.auth.getSession();
     if (sessionError || !session) {
-        window.location.replace("index.html");
+        window.location.replace("/admin/index.html");
         return null;
     }
 
@@ -406,7 +406,7 @@ async function confirmDelete() {
 
 elements.logout.addEventListener("click", async () => {
     await supabase?.auth.signOut();
-    window.location.replace("index.html");
+    window.location.replace("/admin/index.html");
 });
 elements.newButton.addEventListener("click", openNew);
 elements.closeDialog.addEventListener("click", closeEditDialog);
