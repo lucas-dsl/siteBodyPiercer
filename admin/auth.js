@@ -40,7 +40,7 @@ if (!supabaseConfigurado) {
     form.querySelectorAll("input, button").forEach((element) => element.disabled = true);
 } else {
     const { data: { session } } = await supabase.auth.getSession();
-    if (session) window.location.replace("painel.html");
+    if (session) window.location.replace("/admin/painel.html");
 }
 
 form.addEventListener("submit", async (event) => {
@@ -56,7 +56,7 @@ form.addEventListener("submit", async (event) => {
             password: formData.get("password")
         });
         if (error) throw error;
-        window.location.replace("painel.html");
+        window.location.replace("/admin/painel.html");
     } catch (error) {
         mostrarMensagem(traduzirErro(error));
         alternarCarregamento(loginButton, false, "Entrar");
