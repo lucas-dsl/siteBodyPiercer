@@ -1,7 +1,6 @@
 import { supabase, supabaseConfigurado } from "./supabase-client.js";
 
 const BUCKET_GALERIA = "galeria";
-const statusGaleria = document.getElementById("galeria-status");
 const visualizador = document.getElementById("visualizador-galeria");
 const imagemAmpliada = document.getElementById("visualizador-imagem");
 const tituloAmpliado = document.getElementById("visualizador-titulo");
@@ -109,15 +108,13 @@ function criarMensagem(texto) {
 function preencherGradesComMensagem(texto) {
     document.querySelectorAll("[data-gallery-category]").forEach((grade) => {
         grade.replaceChildren(criarMensagem(texto));
+        grade.classList.add("galeria-indisponivel");
         grade.setAttribute("aria-busy", "false");
     });
 }
 
 function exibirAviso() {
-    statusGaleria.textContent =
-        "Não foi possível carregar as fotos agora. Tente novamente em alguns instantes.";
-    statusGaleria.hidden = false;
-    preencherGradesComMensagem("Fotos temporariamente indisponíveis.");
+    preencherGradesComMensagem("Não foi possível carregar as fotos agora. Tente novamente em alguns instantes.");
 }
 
 async function carregarGalerias() {
@@ -144,6 +141,7 @@ async function carregarGalerias() {
     }, {});
 
     document.querySelectorAll("[data-gallery-category]").forEach((grade) => {
+        grade.classList.remove("galeria-indisponivel");
         const categoria = grade.dataset.galleryCategory;
         const itens = itensPorCategoria[categoria] || [];
 

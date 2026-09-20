@@ -477,27 +477,22 @@ button:hover {
     font-size: 1.6rem;
 }
 
-.galeria-status {
-    max-width: 70rem;
-    margin: 2rem auto;
-    padding: 1.2rem 2rem;
-    border: 1px solid #d8b36a;
-    border-radius: 1rem;
-    background-color: #fff8e8;
-    color: #684d19;
-    font-size: 1.5rem;
-    text-align: center;
-}
-
 .galeria-mensagem {
     grid-column: 1 / -1;
     width: 100%;
+    max-width: 60rem;
+    justify-self: center;
     padding: 3rem 2rem;
     border: 1px dashed #c9c0bc;
     border-radius: 1rem;
     color: #676767;
     font-size: 1.6rem;
     text-align: center;
+}
+
+.galeria-indisponivel {
+    min-height: min(35vh, 30rem);
+    align-items: center;
 }
 
 .imagem-galeria-interativa {
