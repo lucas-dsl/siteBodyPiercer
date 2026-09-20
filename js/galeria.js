@@ -1,4 +1,4 @@
-import { supabase, supabaseConfigurado } from "./supabase-client.js";
+import { supabase, supabaseConfigurado } from "./supabase-publico.js";
 
 const BUCKET_GALERIA = "galeria";
 const visualizador = document.getElementById("visualizador-galeria");

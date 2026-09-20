@@ -45,7 +45,7 @@ Para autorizar também o desenvolvedor, repita com o segundo e-mail.
 
 ## 4. Conectar o frontend
 
-O arquivo `js/supabase-client.js` contém a URL e a chave publicável do projeto:
+O arquivo `js/supabase-config.js` contém a URL e a chave publicável do projeto. O site público usa `js/supabase-publico.js`, sem sessão, enquanto o painel usa `js/supabase-client.js`, com renovação de sessão:
 
 ```js
 const SUPABASE_URL = "https://PROJECT_REF.supabase.co";
